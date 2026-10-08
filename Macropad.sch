@@ -1,0 +1,650 @@
+EESchema Schematic File Version 4
+LIBS:power
+LIBS:device
+LIBS:Switch
+LIBS:Connector_Generic
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+Sheet 1 1
+Title "ICStation 17-Key USB Numeric Keypad - Approximate Reverse-Engineered Schematic"
+Comment1 "Model GY22034-1 / Amazon B0GDXYJ1RZ"
+Comment2 "VERIFY MCU, GPIO ASSIGNMENTS, DIODE ORIENTATION AND COMPONENT VALUES"
+Comment3 "KiCad legacy schematic - import into modern KiCad and save as .kicad_sch"
+Comment4 "17-key matrix: Num Lock, /, *, -, 7,8,9,+,4,5,6,1,2,3,0,.,Enter"
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 500000F
+P 1400 1300
+F 0 "J1" H 1550 1400 50  0000 C CNN
+F 1 "USB_A" H 1650 1200 50  0000 C CNN
+	1    1400 1300
+	1 0 0 -1
+$EndComp
+Text Label 1600 1150 0    45   ~ 0
+VBUS_5V
+Text Label 1600 1250 0    45   ~ 0
+USB_D-
+Text Label 1600 1350 0    45   ~ 0
+USB_D+
+Text Label 1600 1450 0    45   ~ 0
+GND
+Wire Wire Line
+	1500 1200 1900 1200
+Wire Wire Line
+	1500 1300 1900 1300
+Wire Wire Line
+	1500 1400 1900 1400
+Wire Wire Line
+	1500 1500 1900 1500
+$Comp
+L Device:Ferrite_Bead FB1
+U 1 1 5000020
+P 2200 1200
+F 0 "FB1" H 2350 1300 50  0000 C CNN
+F 1 "600R@100MHz (VERIFY)" H 2450 1100 50  0000 C CNN
+	1    2200 1200
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	1900 1200 2050 1200
+Wire Wire Line
+	2350 1200 3000 1200
+$Comp
+L Device:C C1
+U 1 1 500002B
+P 2600 1550
+F 0 "C1" H 2750 1650 50  0000 C CNN
+F 1 "0.1uF" H 2850 1450 50  0000 C CNN
+	1    2600 1550
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5000034
+P 2900 1550
+F 0 "C2" H 3050 1650 50  0000 C CNN
+F 1 "10uF (VERIFY)" H 3150 1450 50  0000 C CNN
+	1    2900 1550
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	2600 1200 2600 1400
+Wire Wire Line
+	2900 1200 2900 1400
+Wire Wire Line
+	2600 1700 2600 1800
+Wire Wire Line
+	2900 1700 2900 1800
+Text Label 2600 1800 0    45   ~ 0
+GND
+Text Label 2900 1800 0    45   ~ 0
+GND
+Text Label 3000 1200 0    45   ~ 0
++5V
+$Comp
+L Connector_Generic:Conn_01x14 U1
+U 1 1 5000044
+P 4300 2100
+F 0 "U1" H 4450 2200 50  0000 C CNN
+F 1 "USB Keyboard MCU (VERIFY PART)" H 4550 2000 50  0000 C CNN
+	1    4300 2100
+	1 0 0 -1
+$EndComp
+Text Label 3950 1450 0    45   ~ 0
+VCC
+Text Label 3950 1550 0    45   ~ 0
++5V
+Text Label 3950 1650 0    45   ~ 0
+USB_D-
+Text Label 3950 1750 0    45   ~ 0
+USB_D+
+Text Label 3950 1850 0    45   ~ 0
+GND
+Text Label 3950 1950 0    45   ~ 0
+ROW1
+Text Label 3950 2050 0    45   ~ 0
+ROW2
+Text Label 4650 1550 0    45   ~ 0
+ROW1
+Text Label 4650 1650 0    45   ~ 0
+ROW2
+Text Label 4650 1750 0    45   ~ 0
+ROW3
+Text Label 4650 1850 0    45   ~ 0
+ROW4
+Text Label 4650 1950 0    45   ~ 0
+COL1
+Text Label 4650 2050 0    45   ~ 0
+COL2
+Text Label 4650 2150 0    45   ~ 0
+COL3
+Text Label 4650 2250 0    45   ~ 0
+COL4
+Text Label 4650 2350 0    45   ~ 0
+COL5
+Wire Wire Line
+	3000 1200 3600 1200
+Text Label 3600 1200 0    45   ~ 0
++5V
+Text Label 3600 1300 0    45   ~ 0
+USB_D-
+Text Label 3600 1400 0    45   ~ 0
+USB_D+
+Text Label 3600 1500 0    45   ~ 0
+GND
+Text Label 2500 3100 0    45   ~ 0
+ROW1
+Wire Wire Line
+	2500 3100 10400 3100
+Text Label 2500 3800 0    45   ~ 0
+ROW2
+Wire Wire Line
+	2500 3800 10400 3800
+Text Label 2500 4500 0    45   ~ 0
+ROW3
+Wire Wire Line
+	2500 4500 10400 4500
+Text Label 2500 5200 0    45   ~ 0
+ROW4
+Wire Wire Line
+	2500 5200 10400 5200
+Text Label 5200 2750 0    45   ~ 0
+COL1
+Wire Wire Line
+	5200 2750 5200 5550
+Text Label 6400 2750 0    45   ~ 0
+COL2
+Wire Wire Line
+	6400 2750 6400 5550
+Text Label 7600 2750 0    45   ~ 0
+COL3
+Wire Wire Line
+	7600 2750 7600 5550
+Text Label 8800 2750 0    45   ~ 0
+COL4
+Wire Wire Line
+	8800 2750 8800 5550
+Text Label 10000 2750 0    45   ~ 0
+COL5
+Wire Wire Line
+	10000 2750 10000 5550
+$Comp
+L Switch:SW_Push S1
+U 1 1 5000074
+P 3300 3000
+F 0 "S1" H 3450 3100 50  0000 C CNN
+F 1 "Num Lock" H 3550 2900 50  0000 C CNN
+	1    3300 3000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 500007D
+P 3700 3000
+F 0 "D1" H 3850 3100 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 3950 2900 50  0000 C CNN
+	1    3700 3000
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3400 3000 3550 3000
+Wire Wire Line
+	3800 3000 5200 3000
+Wire Wire Line
+	3200 3000 2500 3000
+Wire Wire Line
+	5200 3000 5200 3100
+$Comp
+L Switch:SW_Push S2
+U 1 1 500008A
+P 4500 3000
+F 0 "S2" H 4650 3100 50  0000 C CNN
+F 1 "/" H 4750 2900 50  0000 C CNN
+	1    4500 3000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5000093
+P 4900 3000
+F 0 "D2" H 5050 3100 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 5150 2900 50  0000 C CNN
+	1    4900 3000
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4600 3000 4750 3000
+Wire Wire Line
+	5000 3000 6400 3000
+Wire Wire Line
+	4400 3000 2500 3000
+Wire Wire Line
+	6400 3000 6400 3100
+$Comp
+L Switch:SW_Push S3
+U 1 1 50000A0
+P 5700 3000
+F 0 "S3" H 5850 3100 50  0000 C CNN
+F 1 "*" H 5950 2900 50  0000 C CNN
+	1    5700 3000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D3
+U 1 1 50000A9
+P 6100 3000
+F 0 "D3" H 6250 3100 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 6350 2900 50  0000 C CNN
+	1    6100 3000
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	5800 3000 5950 3000
+Wire Wire Line
+	6200 3000 7600 3000
+Wire Wire Line
+	5600 3000 2500 3000
+Wire Wire Line
+	7600 3000 7600 3100
+$Comp
+L Switch:SW_Push S4
+U 1 1 50000B6
+P 6900 3000
+F 0 "S4" H 7050 3100 50  0000 C CNN
+F 1 "-" H 7150 2900 50  0000 C CNN
+	1    6900 3000
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D4
+U 1 1 50000BF
+P 7300 3000
+F 0 "D4" H 7450 3100 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 7550 2900 50  0000 C CNN
+	1    7300 3000
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	7000 3000 7150 3000
+Wire Wire Line
+	7400 3000 8800 3000
+Wire Wire Line
+	6800 3000 2500 3000
+Wire Wire Line
+	8800 3000 8800 3100
+$Comp
+L Switch:SW_Push S5
+U 1 1 50000CC
+P 3300 3700
+F 0 "S5" H 3450 3800 50  0000 C CNN
+F 1 "7" H 3550 3600 50  0000 C CNN
+	1    3300 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D5
+U 1 1 50000D5
+P 3700 3700
+F 0 "D5" H 3850 3800 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 3950 3600 50  0000 C CNN
+	1    3700 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3400 3700 3550 3700
+Wire Wire Line
+	3800 3700 5200 3700
+Wire Wire Line
+	3200 3700 2500 3700
+Wire Wire Line
+	5200 3700 5200 3800
+$Comp
+L Switch:SW_Push S6
+U 1 1 50000E2
+P 4500 3700
+F 0 "S6" H 4650 3800 50  0000 C CNN
+F 1 "8" H 4750 3600 50  0000 C CNN
+	1    4500 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D6
+U 1 1 50000EB
+P 4900 3700
+F 0 "D6" H 5050 3800 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 5150 3600 50  0000 C CNN
+	1    4900 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4600 3700 4750 3700
+Wire Wire Line
+	5000 3700 6400 3700
+Wire Wire Line
+	4400 3700 2500 3700
+Wire Wire Line
+	6400 3700 6400 3800
+$Comp
+L Switch:SW_Push S7
+U 1 1 50000F8
+P 5700 3700
+F 0 "S7" H 5850 3800 50  0000 C CNN
+F 1 "9" H 5950 3600 50  0000 C CNN
+	1    5700 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D7
+U 1 1 5000101
+P 6100 3700
+F 0 "D7" H 6250 3800 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 6350 3600 50  0000 C CNN
+	1    6100 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	5800 3700 5950 3700
+Wire Wire Line
+	6200 3700 7600 3700
+Wire Wire Line
+	5600 3700 2500 3700
+Wire Wire Line
+	7600 3700 7600 3800
+$Comp
+L Switch:SW_Push S8
+U 1 1 500010E
+P 6900 3700
+F 0 "S8" H 7050 3800 50  0000 C CNN
+F 1 "+" H 7150 3600 50  0000 C CNN
+	1    6900 3700
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D8
+U 1 1 5000117
+P 7300 3700
+F 0 "D8" H 7450 3800 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 7550 3600 50  0000 C CNN
+	1    7300 3700
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	7000 3700 7150 3700
+Wire Wire Line
+	7400 3700 8800 3700
+Wire Wire Line
+	6800 3700 2500 3700
+Wire Wire Line
+	8800 3700 8800 3800
+$Comp
+L Switch:SW_Push S9
+U 1 1 5000124
+P 3300 4400
+F 0 "S9" H 3450 4500 50  0000 C CNN
+F 1 "4" H 3550 4300 50  0000 C CNN
+	1    3300 4400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D9
+U 1 1 500012D
+P 3700 4400
+F 0 "D9" H 3850 4500 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 3950 4300 50  0000 C CNN
+	1    3700 4400
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3400 4400 3550 4400
+Wire Wire Line
+	3800 4400 5200 4400
+Wire Wire Line
+	3200 4400 2500 4400
+Wire Wire Line
+	5200 4400 5200 4500
+$Comp
+L Switch:SW_Push S10
+U 1 1 500013A
+P 4500 4400
+F 0 "S10" H 4650 4500 50  0000 C CNN
+F 1 "5" H 4750 4300 50  0000 C CNN
+	1    4500 4400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D10
+U 1 1 5000143
+P 4900 4400
+F 0 "D10" H 5050 4500 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 5150 4300 50  0000 C CNN
+	1    4900 4400
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4600 4400 4750 4400
+Wire Wire Line
+	5000 4400 6400 4400
+Wire Wire Line
+	4400 4400 2500 4400
+Wire Wire Line
+	6400 4400 6400 4500
+$Comp
+L Switch:SW_Push S11
+U 1 1 5000150
+P 5700 4400
+F 0 "S11" H 5850 4500 50  0000 C CNN
+F 1 "6" H 5950 4300 50  0000 C CNN
+	1    5700 4400
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D11
+U 1 1 5000159
+P 6100 4400
+F 0 "D11" H 6250 4500 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 6350 4300 50  0000 C CNN
+	1    6100 4400
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	5800 4400 5950 4400
+Wire Wire Line
+	6200 4400 7600 4400
+Wire Wire Line
+	5600 4400 2500 4400
+Wire Wire Line
+	7600 4400 7600 4500
+$Comp
+L Switch:SW_Push S12
+U 1 1 5000166
+P 3300 5100
+F 0 "S12" H 3450 5200 50  0000 C CNN
+F 1 "1" H 3550 5000 50  0000 C CNN
+	1    3300 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D12
+U 1 1 500016F
+P 3700 5100
+F 0 "D12" H 3850 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 3950 5000 50  0000 C CNN
+	1    3700 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	3400 5100 3550 5100
+Wire Wire Line
+	3800 5100 5200 5100
+Wire Wire Line
+	3200 5100 2500 5100
+Wire Wire Line
+	5200 5100 5200 5200
+$Comp
+L Switch:SW_Push S13
+U 1 1 500017C
+P 4500 5100
+F 0 "S13" H 4650 5200 50  0000 C CNN
+F 1 "2" H 4750 5000 50  0000 C CNN
+	1    4500 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D13
+U 1 1 5000185
+P 4900 5100
+F 0 "D13" H 5050 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 5150 5000 50  0000 C CNN
+	1    4900 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	4600 5100 4750 5100
+Wire Wire Line
+	5000 5100 6400 5100
+Wire Wire Line
+	4400 5100 2500 5100
+Wire Wire Line
+	6400 5100 6400 5200
+$Comp
+L Switch:SW_Push S14
+U 1 1 5000192
+P 5700 5100
+F 0 "S14" H 5850 5200 50  0000 C CNN
+F 1 "3" H 5950 5000 50  0000 C CNN
+	1    5700 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D14
+U 1 1 500019B
+P 6100 5100
+F 0 "D14" H 6250 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 6350 5000 50  0000 C CNN
+	1    6100 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	5800 5100 5950 5100
+Wire Wire Line
+	6200 5100 7600 5100
+Wire Wire Line
+	5600 5100 2500 5100
+Wire Wire Line
+	7600 5100 7600 5200
+$Comp
+L Switch:SW_Push S15
+U 1 1 50001A8
+P 6900 5100
+F 0 "S15" H 7050 5200 50  0000 C CNN
+F 1 "0" H 7150 5000 50  0000 C CNN
+	1    6900 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D15
+U 1 1 50001B1
+P 7300 5100
+F 0 "D15" H 7450 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 7550 5000 50  0000 C CNN
+	1    7300 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	7000 5100 7150 5100
+Wire Wire Line
+	7400 5100 8800 5100
+Wire Wire Line
+	6800 5100 2500 5100
+Wire Wire Line
+	8800 5100 8800 5200
+$Comp
+L Switch:SW_Push S16
+U 1 1 50001BE
+P 8500 5100
+F 0 "S16" H 8650 5200 50  0000 C CNN
+F 1 "." H 8750 5000 50  0000 C CNN
+	1    8500 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D16
+U 1 1 50001C7
+P 8900 5100
+F 0 "D16" H 9050 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 9150 5000 50  0000 C CNN
+	1    8900 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	8600 5100 8750 5100
+Wire Wire Line
+	9000 5100 10000 5100
+Wire Wire Line
+	8400 5100 2500 5100
+Wire Wire Line
+	10000 5100 10000 5200
+$Comp
+L Switch:SW_Push S17
+U 1 1 50001D4
+P 9700 5100
+F 0 "S17" H 9850 5200 50  0000 C CNN
+F 1 "Enter" H 9950 5000 50  0000 C CNN
+	1    9700 5100
+	1 0 0 -1
+$EndComp
+$Comp
+L Device:D D17
+U 1 1 50001DD
+P 10100 5100
+F 0 "D17" H 10250 5200 50  0000 C CNN
+F 1 "1N4148 (VERIFY)" H 10350 5000 50  0000 C CNN
+	1    10100 5100
+	1 0 0 -1
+$EndComp
+Wire Wire Line
+	9800 5100 9950 5100
+Wire Wire Line
+	10200 5100 10000 5100
+Wire Wire Line
+	9600 5100 2500 5100
+Wire Wire Line
+	10000 5100 10000 5200
+Text Notes 2500 5900 0    60   ~ 12
+IMPORTANT: This matrix is an approximate reconstruction from the product image/listing.
+Text Notes 2500 6050 0    50   ~ 0
+Verify the actual 17-key row/column mapping, especially the 5th column and Enter key, on the PCB.
+Text Notes 2500 6200 0    50   ~ 0
+Verify MCU part number and GPIO pinout before fabrication or firmware development.
+Text Notes 2500 6350 0    50   ~ 0
+Each key is shown with a steering diode; diode polarity must be checked against the physical PCB.
+$Comp
+L Connector_Generic:Conn_01x09 J2
+U 1 1 50001F2
+P 9800 2100
+F 0 "J2" H 9950 2200 50  0000 C CNN
+F 1 "MATRIX_TEST / MCU I/O" H 10050 2000 50  0000 C CNN
+	1    9800 2100
+	1 0 0 -1
+$EndComp
+Text Label 10000 1700 0    45   ~ 0
+ROW1
+Text Label 10000 1800 0    45   ~ 0
+ROW2
+Text Label 10000 1900 0    45   ~ 0
+ROW3
+Text Label 10000 2000 0    45   ~ 0
+ROW4
+Text Label 10000 2100 0    45   ~ 0
+COL1
+Text Label 10000 2200 0    45   ~ 0
+COL2
+Text Label 10000 2300 0    45   ~ 0
+COL3
+Text Label 10000 2400 0    45   ~ 0
+COL4
+Text Label 10000 2500 0    45   ~ 0
+COL5
+$EndSCHEMATC
